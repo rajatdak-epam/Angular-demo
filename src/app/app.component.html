@@ -1,17 +1,15 @@
 
+  <ul class="navbar-links">
+    <li><a routerLink="/">Home</a></li>
+    <li><a routerLink="/lifecycle">lifeCycle Hook</a></li>
+  </ul>
+  
+
 
 <main class="main">
   <div class="content">
-    <h2>Life Cycle Hook</h2>
-    <button mat-raised-button color="primary" (click)="toggle()">Hide / Show Child</button>
-    <app-child *ngIf="displayChild" [message]="'Hello'">
-        <h4>h4 Data Projected</h4>
-        <span>Span Data Projected</span>
-    </app-child>
+    <h1 style="text-align: center; margin-top: 20px;">Welcome to The Demo</h1>
   </div>
 </main>
-
-
-
 
 <router-outlet></router-outlet>
