@@ -1,0 +1,12 @@
+<div class="container">
+    <mat-form-field class="example-full-width">
+        <mat-label>Enter a new fruit</mat-label>
+        <input matInput #newFruit>
+      </mat-form-field>
+    
+    <button mat-raised-button color="primary" (click)="addFruit(newFruit.value); newFruit.value = '';">Add Fruit</button>
+</div>
+
+<app-change-detector-child [data]="fruits"></app-change-detector-child>
+
+

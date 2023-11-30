@@ -24,5 +24,14 @@ ul {
   }
 
   .active {
-    background-color: #04AA6D;
+    background-color: darkgoldenrod;
+  }
+
+  .main-container {
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
   }
