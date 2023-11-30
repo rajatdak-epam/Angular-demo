@@ -1,0 +1,6 @@
+<h2>Life Cycle Hook</h2>
+<button mat-raised-button color="primary" (click)="toggle()">Hide / Show Child</button>
+<app-child *ngIf="displayChild" [message]="'Hello'">
+    <h4>h4 Data Projected</h4>
+    <span>Span Data Projected</span>
+</app-child>

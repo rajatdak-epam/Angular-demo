@@ -1,0 +1,51 @@
+// Array of object sorting by object key
+
+let array = [
+    { name: 'John', age: 25, date: '2012-07-15' },
+    { name: 'Peter', age: 30, date: '2008-10-02' },
+    { name: 'Harry', age: 28, date: '2020-12-30' },
+    { name: 'Clark', age: 35, date: '2022-01-04' },
+    { name: 'Maya', age: 25, date: '2020-08-05' }
+];
+
+const sortFunction = (sortByKey) => {
+    for (let i = 0; i < array.length; i++) {
+        for (let j = i + 1; j < array.length; j++) {
+            let isCheck = false;
+
+            // for date sorting
+            if (sortByKey === "date") {
+                isCheck = new Date(array[i][sortByKey]) > new Date(array[j][sortByKey])
+            } else {
+                isCheck = array[i][sortByKey] > array[j][sortByKey];
+            }
+
+            if (isCheck) {
+                let temp = array[i];
+                array[i] = array[j];
+                array[j] = temp;
+            }
+        }
+    }
+    return array;
+
+}
+console.log("Array of object by age", sortFunction("date"));
+
+
+
+// Sorting for String
+let str = "xansecuyba";
+let arr = str.split("");
+
+for (let i = 0; i < arr.length; i++) {
+    for (let j = i + 1; j < arr.length; j++) {
+        if (arr[i] > arr[j]) {
+            let temp = arr[i];
+            arr[i] = arr[j];
+            arr[j] = temp;
+        }
+    }
+}
+
+console.log("Sorted str!", arr.join(""));

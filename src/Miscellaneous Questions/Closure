@@ -1,0 +1,41 @@
+// Use case1: As data privacy
+
+const outerFunction = () => {
+    let counter = 0;
+    function innerFunction() {
+        counter++;
+        console.log("get Outer Data", counter)
+    }
+    return innerFunction;
+}
+
+const counter1 = outerFunction();
+counter1();
+counter1();
+
+
+// UseCase 2 in Memorization
+
+const memorize = (func) => {
+    let cache = {};
+
+    return function(key) {
+        if (key in cache) {
+            return cache[key];
+        } else {
+            const calData = func(key)
+            cache[key] = calData;
+            return calData;
+        }
+    }
+    
+}
+
+const calculation = (num) => {
+    return num *2;
+} 
+
+const memorizeFn = memorize(calculation);
+console.log(memorizeFn(5));
+console.log(memorizeFn(10));
+console.log(memorizeFn(5));

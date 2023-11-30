@@ -1,0 +1,9 @@
+<div style="margin-top: 20px;">
+  <h1>Fruit List</h1>
+
+  <button mat-raised-button color="accent" (click)="updateData();">Update Data</button>
+
+  <ul>
+    <li *ngFor="let item of data">{{item}}</li>
+  </ul>
+</div>
