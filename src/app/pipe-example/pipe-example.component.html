@@ -1,0 +1,16 @@
+<div>
+  <h1> Pure Pipe Example</h1>
+    <h4>{{name | reverse}}</h4>
+</div>
+
+
+<div style="margin-top: 30px;">
+  <h1> Impure Pipe Example</h1>
+    <button  mat-raised-button color="primary"
+     (click)="generateNumber()">Generate Number</button>
+    <ul>
+      <li *ngFor="let n of numbers | sorted">{{ n }}</li>
+    </ul>
+  </div>
+
+  
