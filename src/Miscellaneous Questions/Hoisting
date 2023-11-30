@@ -1,0 +1,27 @@
+// Varible hoisting
+
+console.log(bar); // undefined
+var bar = 'bar';
+console.log(bar); //bar
+
+
+// Function Hoisting
+foo();
+function foo() {
+    console.log(data); // undefined
+    var data = '124';
+}
+
+console.log(data); // ReferenceError: bam is not defined
+
+
+
+//function declarations are hoisted before variables.
+console.log(typeof foo); // function
+
+var foo = 'foo';
+
+function foo () {
+    var bam = 'bam';
+    console.log(bam);
+}
