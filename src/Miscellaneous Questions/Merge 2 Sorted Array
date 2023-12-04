@@ -1,0 +1,15 @@
+const mergeSortedArray = (a,b) => {
+    let index = 0;
+    while (b.length>0 && a[index]) {
+        if (a[index] > b[0]) {
+            a.splice(index, 0, b.shift());
+            console.log(a, index);
+        }
+        index++;
+    }
+    return [...a, ...b];
+}
+
+const mergedArr = mergeSortedArray([1,2,3,5,9],[4,6,7,8, 10, 23])
+
+console.log("mergedArr", mergedArr);

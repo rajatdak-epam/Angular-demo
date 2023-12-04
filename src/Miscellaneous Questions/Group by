@@ -1,0 +1,22 @@
+const a = [ 
+    { Phase: "Phase 1", Step: "Step 1", Task: "Task 1", Value: "5" },
+    { Phase: "Phase 1", Step: "Step 1", Task: "Task 2", Value: "10" },
+    { Phase: "Phase 1", Step: "Step 2", Task: "Task 1", Value: "15" },
+    { Phase: "Phase 1", Step: "Step 2", Task: "Task 2", Value: "20" },
+    { Phase: "Phase 2", Step: "Step 1", Task: "Task 1", Value: "25" },
+    { Phase: "Phase 2", Step: "Step 1", Task: "Task 2", Value: "30" },
+    { Phase: "Phase 2", Step: "Step 2", Task: "Task 1", Value: "35" },
+    { Phase: "Phase 2", Step: "Step 2", Task: "Task 2", Value: "40" }
+];
+
+const groupBy = (arr, item) => {
+    return arr.reduce((a, c) => {
+        const key = c[item];
+        if (key in a) a[key].push(c);
+        else a[key] = [c];
+        return a;
+    }, {});
+     
+}
+
+console.log("group by particular key", groupBy(a, "Phase"));
