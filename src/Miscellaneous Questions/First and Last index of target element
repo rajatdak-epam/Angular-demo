@@ -1,0 +1,30 @@
+const binarySearch = (arr, target, indexdType) => {
+    let low = 0;
+    let high = arr.length - 1;
+    let res = -1
+    while (low <= high) {
+        let mid = Math.floor((low+high)/2);
+        if (arr[mid] > target) {
+            high = mid -1;
+        } else if (arr[mid] < target) {
+            low = mid + 1;    
+        } else {
+            res = mid;
+            if (indexdType === "first") {
+                high = mid -1;
+            } else {
+                low = mid + 1;
+            }
+           
+        }
+    }
+    return res;
+}
+
+const sortedArr = [ 1, 2, 3, 3, 3, 4, 4, 5, 6 ];
+const target  = 3;
+
+let left = binarySearch(sortedArr, target, "first");
+let right = binarySearch(sortedArr, target, "last");
+
+console.log("First and Last index of target element", [left, right]);

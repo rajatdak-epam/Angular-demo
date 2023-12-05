@@ -1,0 +1,29 @@
+const checkRedundant = (strArr) => {
+    let stack = [];
+    let oparatorArr = ["+", "-", "*", "/"];
+    let isRedudant = false;
+    
+    for (let ch of strArr) {
+        if (ch === ')') {
+            // pop the last element from stack
+            let top = stack.pop();
+            
+            let flag = true;
+            
+            while (stack.length !== 0 && top !== '(') {
+                // if stack contain any operator then set false
+                if (oparatorArr.includes(top)) flag = false;
+                top = stack.pop();
+            }
+            
+            // if any operator not found means it is redundant
+            if (flag) isRedudant = flag;
+        } else {
+            stack.push(ch);
+        }
+    }
+    return isRedudant;
+}
+
+let str = "(a+c*b)+(c))";
+console.log("Checking Redundant braces ->", checkRedundant(str.split("")));

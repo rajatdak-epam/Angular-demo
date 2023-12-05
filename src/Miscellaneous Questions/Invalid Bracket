@@ -1,0 +1,26 @@
+const checkInvalidBracket = (strArr) => {
+    let stack = [];
+    let isInvalid = false;
+    
+    for (let ch of strArr) {
+        if (ch === ')') {
+            const top = stack.pop();
+            if (top !== '(')  isInvalid = true;
+        } else if (ch === '}') {
+            const top = stack.pop();
+            if (top !== '{')  isInvalid = true;
+        } else if (ch === ']') {
+            const top = stack.pop();
+            if (top !== '[')  isInvalid = true;
+        }
+        else {
+            stack.push(ch);
+        }
+    }
+    // stack still have some bracket then invalid
+    if (stack.length) isInvalid = true;
+    return isInvalid;
+}
+
+let str = “[()]{}{[()()]()}";
+console.log("Checking Invalid braces ->", checkInvalidBracket(str.split("")));

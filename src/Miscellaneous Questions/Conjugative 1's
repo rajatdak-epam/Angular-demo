@@ -1,0 +1,13 @@
+const nums = [1,0,0,1,1,1,0,0,1,0,1,1,0,0,1, 1, 1, 1];
+
+let maxCount=0, count =0;
+for (let item of nums) {
+    if (item === 1) count++;
+    else {
+        if (maxCount<count) maxCount = count;
+        count = 0;
+    }
+}
+if (maxCount<count) maxCount = count;
+
+console.log("Max Conjugative 1's Count!", maxCount);

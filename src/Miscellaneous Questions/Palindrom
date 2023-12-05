@@ -1,0 +1,44 @@
+// Palindrom Number
+
+const reverseNum = (num) => {
+    let sum = 0;
+    while (num > 0) {
+        let x = Math.floor(num % 10);
+        sum = sum*10 + x;
+        num = Math.floor(num / 10);
+    }
+    return sum;
+}
+
+const checkPalindrom = (num) => {
+    if (num === reverseNum(num)) {
+        return `${num} is a Palindrom Number`;
+    } else {
+        return `${num} is not a Palindrom Number`;
+    }
+}
+
+console.log("Answer - ", checkPalindrom(45654));
+
+
+// palindrom String
+
+const reverseStr = (str) => {
+    let rev = "";
+    for (let i=str.length-1; i>=0; i--) {
+        rev += str[i];
+    }
+    return rev;
+    
+    // return str.split("").reverse().join("");
+}
+
+const checkPalindromStr = (str) => {
+    if (str === reverseStr(str)) {
+        return `${str} is a Palindrom String`;
+    } else {
+        return `${str} is not a Palindrom String`;
+    }
+}
+
+console.log("Answer - ", checkPalindromStr("rajar"));

@@ -1,0 +1,23 @@
+const checkPalindrom = (str) => {
+    const reverseStr = str.split("").reverse().join("");
+    if (str === reverseStr) {
+        return true;
+    }
+    return false;
+}
+
+const longestPalindromStr = (str) => {
+    let strArr = str.split(" ");
+    let longestStr = "";
+    for (let item of strArr) {
+        const isPalindrom = checkPalindrom(item);
+        if(isPalindrom && item.length > longestStr.length) {
+            longestStr = item;
+        }
+    }
+    return longestStr;
+}
+
+const lPStr = longestPalindromStr("aba abba abc");
+
+console.log(`Longest Palindrom String is ${lPStr} and count is ${lPStr.length}`);
