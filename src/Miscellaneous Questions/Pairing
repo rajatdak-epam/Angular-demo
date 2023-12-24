@@ -1,0 +1,12 @@
+let arr = [1,4,5,3,2,6, 8] 
+const targetSum = 8 
+
+let pair = {};
+let finalPair = [];
+
+for (let item of arr) {
+    if (pair[item]) finalPair.push([pair[item], item]);
+    else pair[targetSum-item] = item;
+}
+
+console.log("finalPair", finalPair);
