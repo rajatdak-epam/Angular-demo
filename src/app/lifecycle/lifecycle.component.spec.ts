@@ -20,4 +20,10 @@ describe('LifecycleComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should call toggle', () => {
+    component.displayChild = false;
+    component.toggle();
+    expect(component.displayChild).toEqual(true);
+  });
 });

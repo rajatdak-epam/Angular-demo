@@ -23,7 +23,7 @@ export class BooksComponent implements OnInit {
     displayedColumns: string[] = ['Id', 'Name', 'Action'];
     dataSource: MatTableDataSource<IBook[]>;
 
-    constructor(private readonly store: Store) {
+    constructor( public readonly store: Store) {
     }
 
     ngOnInit(): void {
@@ -52,7 +52,7 @@ export class BooksComponent implements OnInit {
         this.store.dispatch(fromBooks.getBooks());
     }
 
-    private initSubscriptions(): void {
+     initSubscriptions(): void {
         this.books$ = this.store.pipe(select(fromBooks.selectBooksList));
         this.isLoading$ = this.store.pipe(select(fromBooks.selectBookIsLoading));
     }

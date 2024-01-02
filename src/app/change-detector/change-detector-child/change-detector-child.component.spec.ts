@@ -20,4 +20,10 @@ describe('ChangeDetectorChildComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should create', () => {
+    component.data = (["Orange", "Watermelon", "Apple"]);
+    component.updateData();
+    expect(component.data.length).toEqual(3);
+  });
 });

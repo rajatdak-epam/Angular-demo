@@ -21,7 +21,7 @@ export class PipeExampleComponent implements OnInit, OnDestroy {
   books$: Observable<IBook[]>;
   destroy$: Subject<boolean> = new Subject<boolean>();
 
-  constructor(private readonly store: Store) {
+  constructor(public readonly store: Store) {
 
   }
 
