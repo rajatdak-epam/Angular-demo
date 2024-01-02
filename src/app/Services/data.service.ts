@@ -5,7 +5,7 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class DataService {
-  private dataSubject = new BehaviorSubject<any[]>([]);
+  dataSubject = new BehaviorSubject<any[]>([]);
 
   data$ = this.dataSubject.asObservable();
 

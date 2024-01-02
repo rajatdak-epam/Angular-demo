@@ -7,7 +7,7 @@ import { Observable, of } from 'rxjs';
 })
 export class BookService {
 
-    private booksList: IBook[] = [
+    booksList: IBook[] = [
         {
             id: Math.floor(Math.random()*100),
             name: 'Book 1'
